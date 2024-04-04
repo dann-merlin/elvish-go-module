@@ -71,13 +71,13 @@ that are shared between the module and elvish itself.
 
 You can run a script provided in this repo, like this:
 ```bash
-`./check-compatibility.elv check /path/to/elvish/directory`
+./check-compatibility.elv check /path/to/elvish/directory
 ```
 This checks all shared dependencies and informs you of discrepancies.
 
 You can also let it try to fix these, by running:
 ```bash
-`./check-compatibility.elv fix /path/to/elvish/directory`
+./check-compatibility.elv fix /path/to/elvish/directory
 ```
 I have only tested this a little bit, so be sure to let me know of any bugs
 or failed fix attempts by submitting an issue.
@@ -92,8 +92,8 @@ go build -buildmode=plugin
 
 This will create a dynamic library (`.so` file).
 
-The official builds currently do not support go modules.
-You will have to build a go binary yourself passing `CGO_ENABLED=1` as an environment variable.
+The official builds of elvish currently do not support go modules.
+You will have to build an elvish binary yourself passing `CGO_ENABLED=1` as an environment variable.
 
 ```bash
 CGO_ENABLED=1 go install ./cmd/elvish
@@ -103,3 +103,6 @@ CGO_ENABLED=1 go install ./cmd/elvish
 
 Provide a skeleton .elv file which describes the interfaces including
 documenting comments.
+
+See the `helloworld.elv` file for an example and see the builtin modules in `pkg/mods`
+in the elvish repo for more detailed documentation examples.
